@@ -14,7 +14,6 @@ class MethodChannelPermissionHandler extends PermissionHandlerPlatform {
   Future<PermissionStatus> checkPermissionStatus(Permission permission) async {
     final status = await _methodChannel.invokeMethod(
         'checkPermissionStatus', permission.value);
-
     return Codec.decodePermissionStatus(status);
   }
 

@@ -28,6 +28,7 @@ class _PermissionState extends State<PermissionWidget> {
 
   void _listenForPermissionStatus() async {
     final status = await _permission.status;
+    print(status);
     setState(() => _permissionStatus = status);
   }
 

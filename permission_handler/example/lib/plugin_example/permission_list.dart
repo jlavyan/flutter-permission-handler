@@ -10,6 +10,7 @@ import 'permission_widget.dart';
 class PermissionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    sss();
     return Center(
       child: ListView(
           children: Permission.values
@@ -30,5 +31,9 @@ class PermissionList extends StatelessWidget {
               .map((permission) => PermissionWidget(permission))
               .toList()),
     );
+  }
+
+  Future<void> sss() async {
+    print(await Permission.photos.status);
   }
 }

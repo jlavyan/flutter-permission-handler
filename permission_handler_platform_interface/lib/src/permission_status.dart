@@ -22,10 +22,16 @@ enum PermissionStatus {
   /// permission status in the settings.
   /// *Only supported on Android.*
   permanentlyDenied,
+
+  /// For photo limited access
+  /// *Only supported on iOS.*
+  limited,
 }
 
 extension PermissionStatusValue on PermissionStatus {
   int get value {
+    print(this);
+
     switch (this) {
       case PermissionStatus.denied:
         return 0;
@@ -49,6 +55,7 @@ extension PermissionStatusValue on PermissionStatus {
       PermissionStatus.restricted,
       PermissionStatus.undetermined,
       PermissionStatus.permanentlyDenied,
+      PermissionStatus.limited,
     ][value];
   }
 }

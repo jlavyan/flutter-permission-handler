@@ -22,6 +22,8 @@
     id <PermissionStrategy> permissionStrategy = [PermissionManager createPermissionStrategy:permission];
     PermissionStatus status = [permissionStrategy checkPermissionStatus:permission];
     
+    NSNumber *nn = [Codec encodePermissionStatus:status];
+    NSLog(@"%li", [Codec encodePermissionStatus:status]);
     result([Codec encodePermissionStatus:status]);
 }
 
